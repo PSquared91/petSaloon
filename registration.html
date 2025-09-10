@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration — Paw Patrol Pet Saloon</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Paw Patrol Pet Saloon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="registration.html">Registration</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="bg-primary text-white text-center py-4 mb-4">
+    <h1>Register Your Pet</h1>
+    <p>Quick and easy sign-up for our services</p>
+  </div>
+
+  <!-- Form -->
+  <div class="container" style="max-width: 600px;">
+    <div class="card p-4 shadow-sm">
+      <form id="petForm" novalidate>
+        <div class="mb-3">
+          <label for="petName" class="form-label">Pet Name</label>
+          <input type="text" id="petName" class="form-control" placeholder="e.g., Bella" required>
+          <div class="invalid-feedback">Please enter your pet's name.</div>
+        </div>
+        <div class="mb-3">
+          <label for="petAge" class="form-label">Age</label>
+          <input type="number" id="petAge" class="form-control" min="0" placeholder="e.g., 3" required>
+          <div class="invalid-feedback">Please enter a valid age.</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label d-block">Gender</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="petGender" value="Female" checked>
+            <label class="form-check-label">Female</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="petGender" value="Male">
+            <label class="form-check-label">Male</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="petBreed" class="form-label">Breed</label>
+          <input type="text" id="petBreed" class="form-control" placeholder="e.g., Poodle" required>
+          <div class="invalid-feedback">Please enter the breed.</div>
+        </div>
+        <div class="mb-3">
+          <label for="petService" class="form-label">Service</label>
+          <select id="petService" class="form-select" required>
+            <option value="">Choose a service…</option>
+            <option value="Grooming">Grooming</option>
+            <option value="Vaccination">Vaccination</option>
+            <option value="Checkup">Health Checkup</option>
+            <option value="Boarding">Boarding</option>
+          </select>
+          <div class="invalid-feedback">Please select a service.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register Pet</button>
+        <button type="button" id="clearBtn" class="btn btn-secondary">Clear Form</button>
+        <a href="index.html" class="btn btn-link">Back to Home</a>
+      </form>
+      <div id="message" class="alert alert-success mt-3 d-none">Pet registered! Redirecting…</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">© 2025 Paw Patrol Pet Saloon | Made with ❤️ for pets</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    const form = document.getElementById("petForm");
+    const message = document.getElementById("message");
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      const name=document.getElementById("petName");
+      const age=document.getElementById("petAge");
+      const breed=document.getElementById("petBreed");
+      const service=document.getElementById("petService");
+      const gender=document.querySelector('input[name="petGender"]:checked').value;
+
+      let valid=true;
+      if(name.value.trim()===""){name.classList.add("is-invalid"); valid=false;} else name.classList.remove("is-invalid");
+      if(age.value===""||age.value<0){age.classList.add("is-invalid"); valid=false;} else age.classList.remove("is-invalid");
+      if(breed.value.trim()===""){breed.classList.add("is-invalid"); valid=false;} else breed.classList.remove("is-invalid");
+      if(service.value===""){service.classList.add("is-invalid"); valid=false;} else service.classList.remove("is-invalid");
+
+      if(!valid)return;
+
+      pets.push({name:name.value.trim(),age:Number(age.value),gender:gender,service:service.value,breed:breed.value.trim()});
+      message.classList.remove("d-none");
+      setTimeout(()=>{window.location.href="success.html";},800);
+    });
+    document.getElementById("clearBtn").addEventListener("click",()=>form.reset());
+  </script>
+</body>
+</html>
