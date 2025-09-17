@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paw Patrol Pet Saloon</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="mystyle.css"/>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Paw Patrol Pet Saloon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link btn btn-primary text-white px-3 ms-lg-2" href="registration.html">Registration</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero-section text-white text-center">
+    <div class="container py-5">
+      <h1 class="display-5">🐾 Welcome to Paw Patrol Pet Saloon</h1>
+      <p class="lead mb-0">Caring for your pets like family</p>
+    </div>
+  </header>
+
+  <!-- Salon Info + Stats -->
+  <main class="container my-5">
+    <div class="row g-4">
+      <!-- Salon Object Literal Display -->
+      <section class="col-12 col-lg-6">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h2 class="h4 mb-3">Our Salon</h2>
+            <ul class="list-unstyled mb-0" id="salonInfo">
+              <!-- Filled by script.js from the salon object -->
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="col-12 col-lg-6">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h2 class="h4 mb-3">Today’s Stats</h2>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="stat-tile">
+                <div class="stat-label">Total Registered</div>
+                <div class="stat-value" id="petCount">0</div>
+              </div>
+              <div class="stat-tile">
+                <div class="stat-label">Average Age</div>
+                <div class="stat-value"><span id="avgAge">0</span> yrs</div>
+              </div>
+            </div>
+            <a class="btn btn-outline-primary btn-sm" href="registration.html">Register a New Pet</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Registered Pets Table -->
+    <section class="mt-4">
+      <div class="card p-3 shadow-sm">
+        <h3 class="h5 mb-3">Registered Pets</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover align-middle" id="petTable">
+            <thead class="table-light">
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Breed</th>
+                <th>Type</th>
+                <th>Service</th>
+              </tr>
+            </thead>
+            <tbody id="petTableBody"></tbody>
+          </table>
+        </div>
+        <p class="text-muted small mt-2 mb-0">Tip: Add more via <code>registration.html</code>.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">© 2025 Paw Patrol Pet Saloon · Made with ❤️ for pets</p>
+  </footer>
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
