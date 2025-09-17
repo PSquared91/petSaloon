@@ -38,3 +38,20 @@ form .btn { border-radius: 0.75rem; }
   padding-top: 0.9rem;
   padding-bottom: 0.9rem;
 }
+/* Services */
+.badge.text-bg-primary { font-size: .85rem; padding:.4rem .6rem; }
+.table-hover tbody tr:hover { background-color: rgba(13,110,253,.05); }
+
+:root{
+  --brand:#6f42c1;
+}
+body{
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+}
+.navbar-brand span{color:var(--brand)}
+.card-pet{transition: transform .15s ease, box-shadow .15s ease}
+.card-pet:hover{transform: translateY(-3px); box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15)}
+.color-dot{width:1.25rem;height:1.25rem;border-radius:999px;display:inline-block;border:1px solid rgba(0,0,0,.15)}
+.form-section{background:linear-gradient(180deg, rgba(111,66,193,.06), transparent)}
+.table thead th{background:#f8f9fa}
+.badge-service{background: #f1effa; color:#4b2e83; border:1px solid #e2def7}
