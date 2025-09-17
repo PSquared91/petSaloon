@@ -1,24 +1,40 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa; /* light gray */
-  margin: 20px;
+/* Base tweaks */
+body { background: #f7f8fb; }
+.hero-section {
+  background: linear-gradient(135deg, #0d6efd, #5ab1ff);
+}
+.sub-hero {
+  background: linear-gradient(135deg, #0d6efd, #4e9cff);
+}
+.navbar-brand { letter-spacing: 0.3px; }
+
+/* Stat tiles */
+.stat-tile {
+  background: #f0f6ff;
+  border: 1px solid #e2ecff;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  min-width: 46%;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+.stat-value {
+  font-weight: 700;
+  font-size: 1.35rem;
+  margin-top: 2px;
 }
 
-h1, h2, h3 {
-  color: #2c3e50;
-}
+/* Cards */
+.card { border-radius: 1rem; }
 
-ul {
-  list-style-type: square;
-  padding-left: 20px;
-}
+/* Form polish */
+form .form-label { font-weight: 600; }
+form .btn { border-radius: 0.75rem; }
 
-li {
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #34495e;
-}
-
-.card {
-  margin-bottom: 15px;
+/* List items */
+#petList .list-group-item {
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
 }
