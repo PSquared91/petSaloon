@@ -1,0 +1,170 @@
+/* ===========================
+   Global Theme Tokens
+   =========================== */
+:root{
+  --bg:#000000;
+  --panel:#0f1115;
+  --panel-border:#1f2530;
+
+  --text:#ffffff;          /* primary copy color (white on black) */
+  --muted:#ffffff;         /* force Bootstrap muted/secondary to white */
+
+  --link:#9ecbff;
+  --link-hover:#cde2ff;
+
+  --input-bg:#0b0d12;
+  --input-border:#2c3444;
+  --input-text:#ffffff;
+
+  --invalid:#dc3545;       /* red for invalid borders */
+
+  --brand:#6f42c1;         /* your purple accent */
+}
+
+/* Optional: load Poppins (or add as <link> in <head>) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* ===========================
+   Base + Typography
+   =========================== */
+html, body { height: 100%; }
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* Make all common “gray” styles white on dark for readability */
+.subtle, .text-muted, .text-secondary,
+.table > :not(caption) > * > * .text-muted,
+.card .text-muted,
+#packageGrid .text-muted,
+#alacarteTable .text-muted,
+#petList .list-group-item small {
+  color: var(--muted) !important;
+  opacity: 1 !important;
+}
+
+/* Links */
+a{ color: var(--link); }
+a:hover{ color: var(--link-hover); }
+
+/* Navbar / Branding */
+.navbar-dark .navbar-brand,
+.navbar-dark .nav-link { color:#fff !important; }
+.navbar-brand { letter-spacing: 0.3px; }
+.navbar-brand span { color: var(--brand); }
+
+/* Footer */
+footer{ color: var(--muted); }
+
+/* ===========================
+   Hero & Sub-hero
+   =========================== */
+.hero-section{
+  background: linear-gradient(135deg, #0d6efd, #4e9cff);
+  border-bottom: 1px solid var(--panel-border);
+}
+.sub-hero{
+  background: linear-gradient(135deg, #0d6efd, #4e9cff);
+}
+
+/* ===========================
+   Cards
+   =========================== */
+.card{
+  border-radius: 1rem;
+  background: #1a1a1a;
+  color: #ffffff;
+}
+.card-dark{
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 1rem;
+}
+
+/* Fancy pet cards */
+.card-pet{
+  transition: transform .15s ease, box-shadow .15s ease;
+  background: #1a1a1a;
+  color: #ffffff;
+}
+.card-pet:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.6);
+}
+
+/* ===========================
+   Stat Tiles (Home)
+   =========================== */
+.stat-tile{
+  background: #0b1220;
+  border: 1px solid #1e2a44;
+  padding: .85rem 1rem;
+  border-radius: .75rem;
+  min-width: 46%;
+  color: #ffffff;
+}
+.stat-label{ font-size: .85rem; color: var(--muted) !important; }
+.stat-value{ font-weight: 700; font-size: 1.35rem; margin-top: 2px; color: #ffffff; }
+
+/* ===========================
+   Lists & Badges
+   =========================== */
+#petList .list-group-item{
+  padding-top: .9rem;
+  padding-bottom: .9rem;
+  background: #111111;
+  color: #ffffff;
+}
+.badge.text-bg-primary{ font-size: .85rem; padding:.4rem .6rem; }
+.badge-service{
+  background: #2a2a2a;
+  color:#cbb6f5;
+  border:1px solid #444444;
+}
+
+/* ===========================
+   Tables
+   =========================== */
+.table-hover tbody tr:hover{ background-color: rgba(255,255,255,.05); }
+.card-dark .table thead th{ border-bottom-color: var(--panel-border); }
+.card-dark .table tbody tr{ border-color: var(--panel-border); }
+.table thead th{ background:#111111; color:#ffffff; }
+
+/* ===========================
+   Forms
+   =========================== */
+form .form-label{ font-weight: 600; color:#ffffff; }
+.btn{ border-radius: .75rem; }
+
+.form-control,
+.form-select,
+textarea{
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+}
+.form-control::placeholder,
+textarea::placeholder{
+  color: #bfc7d4;
+  opacity: .6;
+}
+
+/* Visual invalid state (NO alerts used) */
+.is-invalid,
+.error-border{
+  border-color: var(--invalid) !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15);
+}
+
+/* ===========================
+   Misc
+   =========================== */
+.color-dot{
+  width:1.25rem; height:1.25rem; border-radius:999px;
+  display:inline-block; border:1px solid rgba(255,255,255,.3);
+}
+.form-section{
+  background: linear-gradient(180deg, rgba(111,66,193,.2), transparent);
+}

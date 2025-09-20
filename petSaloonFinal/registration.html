@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Register your pet at Paw Patrol Pet Salon."/>
+  <title>Register a Pet · Paw Patrol Pet Salon</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style/mystyle.css"/>
+  <link rel="icon" href="data:,"/>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index3.html">Paw Patrol Pet Salon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index3.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="services2.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="registration.html">Registration</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="sub-hero text-center text-white py-4">
+    <h1 class="h3 mb-0">Register Your Pet</h1>
+  </header>
+
+  <main class="container my-5">
+    <form id="petForm" class="card shadow-sm p-4 mx-auto" style="max-width: 820px;" novalidate>
+      <div class="row g-3">
+        <!-- Pet basics -->
+        <div class="col-md-6">
+          <label for="name" class="form-label">Pet Name</label>
+          <input id="name" name="name" type="text" class="form-control" required/>
+          <div class="invalid-feedback">Please enter your pet’s name.</div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="age" class="form-label">Age (years)</label>
+          <input id="age" name="age" type="number" min="0" step="1" class="form-control" required/>
+          <div class="invalid-feedback">Enter a valid age (0+).</div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="gender" class="form-label">Gender</label>
+          <select id="gender" name="gender" class="form-select" required>
+            <option value="" selected disabled>Choose...</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Unknown</option>
+          </select>
+          <div class="invalid-feedback">Please select a gender.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="breed" class="form-label">Breed</label>
+          <input id="breed" name="breed" type="text" class="form-control" placeholder="e.g., Golden Retriever" required/>
+          <div class="invalid-feedback">Please enter a breed (or type “Mixed”).</div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="type" class="form-label">Type</label>
+          <select id="type" name="type" class="form-select" required>
+            <option value="" selected disabled>Select type</option>
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Bird</option>
+            <option>Small Pet</option>
+            <option>Other</option>
+          </select>
+          <div class="invalid-feedback">Please choose a pet type.</div>
+        </div>
+
+        <!-- Services -->
+        <div class="col-md-6">
+          <label for="service" class="form-label">Requested Service</label>
+          <select id="service" name="service" class="form-select" required>
+            <option value="" selected disabled>Select service</option>
+            <option>Grooming</option>
+            <option>Bath</option>
+            <option>Nail Trim</option>
+            <option>Vaccination</option>
+            <option>Daycare</option>
+          </select>
+          <div class="invalid-feedback">Please select a service.</div>
+        </div>
+
+        <!-- Owner & contact -->
+        <div class="col-md-6">
+          <label for="owner" class="form-label">Owner Name</label>
+          <input id="owner" name="owner" type="text" class="form-control" required/>
+          <div class="invalid-feedback">Please enter the owner’s name.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="phone" class="form-label">Phone</label>
+          <input id="phone" name="phone" type="tel" class="form-control" placeholder="(281) 330-8004" required/>
+          <div class="invalid-feedback">Please provide a contact phone.</div>
+        </div>
+
+        <!-- Color & label -->
+
+        <div class="col-md-3">
+          <label for="colorName" class="form-label">Color</label>
+          <input id="colorName" name="colorName" type="text" class="form-control" placeholder="e.g., Brown"/>
+        </div>
+
+        <!-- Notes -->
+        <div class="col-12">
+          <label for="notes" class="form-label">Notes</label>
+          <textarea id="notes" name="notes" class="form-control" rows="3" placeholder="Allergies, temperament, special requests…"></textarea>
+        </div>
+
+        <!-- Actions -->
+        <div class="col-12 d-flex gap-2 mt-3">
+          <button class="btn btn-primary" type="submit">Save Pet</button>
+          <button class="btn btn-outline-secondary" type="reset">Clear</button>
+          <a class="btn btn-link ms-auto" href="index3.html">Back to Home</a>
+        </div>
+
+        <!-- Success alert -->
+        <div class="col-12">
+          <div id="formAlert" class="alert alert-success d-none" role="alert">
+            Pet saved! 🎉
+          </div>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">© <span id="year"></span> Paw Patrol Pet Salon</p>
+  </footer>
+
+  <!-- Scripts: jQuery BEFORE script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="scripts/indexfinal.js"></script>
+</body>
+</html>

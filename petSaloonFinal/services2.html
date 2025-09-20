@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Services and pricing at Paw Patrol Pet Salon."/>
+  <title>Services | Paw Patrol Pet Salon</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style/mystyle.css"/>
+  <link rel="icon" href="data:,"/>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index3.html">Paw Patrol Pet Salon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index3.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="services2.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="sub-hero text-white text-center py-5 mb-4">
+    <div class="container">
+      <h1 class="h3 mb-1">Services & Pricing</h1>
+      <p class="mb-0 opacity-75">Gentle care, happy pets, transparent prices.</p>
+    </div>
+  </header>
+
+  <main class="container mb-5">
+    <!-- Filter -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-6">
+            <label for="typeFilter" class="form-label mb-1">Filter by pet type</label>
+            <select id="typeFilter" class="form-select" aria-label="Filter services by pet type">
+              <option value="All" selected>All</option>
+              <option value="Dog">Dog</option>
+              <option value="Cat">Cat</option>
+              <option value="Bird">Bird</option>
+              <option value="Rabbit">Rabbit</option>
+              <option value="Reptile">Reptile</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a class="btn btn-primary mt-2 mt-md-0" href="registration.html">Book a Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Packages -->
+    <section class="mb-4" aria-labelledby="packages-heading">
+      <h2 id="packages-heading" class="h5 mb-3">Popular Packages</h2>
+      <div class="row g-3" id="packageGrid">
+        <!-- Cards (each has data-type for filtering) -->
+        <div class="col-md-4" data-type="Dog Cat">
+          <div class="card h-100 shadow-sm card-pet">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Bath & Brush</h3>
+              <p class="text-muted mb-2">Shampoo, blow-dry, brush-out, light fragrance.</p>
+              <div class="d-flex justify-content-between align-items-end">
+                <span class="badge badge-service text-bg-primary">$25–$45</span>
+                <small class="text-muted">Dog, Cat</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-type="Dog">
+          <div class="card h-100 shadow-sm card-pet">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Full Groom</h3>
+              <p class="text-muted mb-2">Bath, haircut, nail trim, ear clean, pads & sanitary.</p>
+              <div class="d-flex justify-content-between align-items-end">
+                <span class="badge badge-service text-bg-primary">$55–$95</span>
+                <small class="text-muted">Dog</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-type="Cat">
+          <div class="card h-100 shadow-sm card-pet">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Lion Cut (Cat)</h3>
+              <p class="text-muted mb-2">Bath (optional), clip, brush-out, nail trim.</p>
+              <div class="d-flex justify-content-between align-items-end">
+                <span class="badge badge-service text-bg-primary">$65–$85</span>
+                <small class="text-muted">Cat</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-type="Bird">
+          <div class="card h-100 shadow-sm card-pet">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Wing & Nail Trim</h3>
+              <p class="text-muted mb-2">Gentle trimming by experienced staff.</p>
+              <div class="d-flex justify-content-between align-items-end">
+                <span class="badge badge-service text-bg-primary">$20–$35</span>
+                <small class="text-muted">Bird</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-type="Dog Cat Rabbit Other">
+          <div class="card h-100 shadow-sm card-pet">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Nail Trim</h3>
+              <p class="text-muted mb-2">Clip, grind (on request), paw balm.</p>
+              <div class="d-flex justify-content-between align-items-end">
+                <span class="badge badge-service text-bg-primary">$12–$20</span>
+                <small class="text-muted">Most Types</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-type="Dog Cat Other">
+          <div class="card h-100 shadow-sm card-pet">
+            <div class="card-body">
+              <h3 class="h6 mb-1">Flea & Tick Treatment</h3>
+              <p class="text-muted mb-2">Medicated bath and post-treatment comb-out.</p>
+              <div class="d-flex justify-content-between align-items-end">
+                <span class="badge badge-service text-bg-primary">$35–$55</span>
+                <small class="text-muted">Dog, Cat</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- À la carte -->
+    <section class="mb-4" aria-labelledby="alacarte-heading">
+      <h2 id="alacarte-heading" class="h5 mb-3">À la Carte Services</h2>
+      <div class="table-responsive shadow-sm">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">Type</th>
+              <th scope="col" class="text-end">Price</th>
+            </tr>
+          </thead>
+          <tbody id="alacarteTable">
+            <tr data-type="Dog Cat"><td>Ear Cleaning</td><td>Dog, Cat</td><td class="text-end">$10</td></tr>
+            <tr data-type="Dog Cat"><td>Teeth Brushing</td><td>Dog, Cat</td><td class="text-end">$10</td></tr>
+            <tr data-type="Dog"><td>De-Shedding (FURminator)</td><td>Dog</td><td class="text-end">$20–$35</td></tr>
+            <tr data-type="Cat"><td>De-Matting (light)</td><td>Cat</td><td class="text-end">$15–$30</td></tr>
+            <tr data-type="Bird"><td>Beak Trim (light)</td><td>Bird</td><td class="text-end">$15</td></tr>
+            <tr data-type="Rabbit Other"><td>Brush-Out</td><td>Rabbit / Other</td><td class="text-end">$10–$15</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted small mt-2">Prices vary by size, coat, and temperament. Final quote given at check-in.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="h5 mb-3">FAQs</h2>
+      <div class="accordion shadow-sm" id="faq">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">
+              Do I need an appointment?
+            </button>
+          </h2>
+          <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faq">
+            <div class="accordion-body">
+              Appointments are recommended. Walk-ins are accepted when space allows. You can <a href="registration.html">register your pet</a> now.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+              What vaccines are required?
+            </button>
+          </h2>
+          <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faq">
+            <div class="accordion-body">
+              For dogs: Rabies, Bordetella (kennel cough) recommended; for cats: Rabies recommended. Please bring proof or a photo.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
+              How long does a full groom take?
+            </button>
+          </h2>
+          <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faq">
+            <div class="accordion-body">
+              Typically 2–4 hours depending on size, coat condition, and behavior. We’ll text you when your pet is ready.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">© <span id="year"></span> Paw Patrol Pet Salon | Made with ❤️ for pets</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Robust client-side filter (handles extra whitespace)
+    const typeFilter = document.getElementById('typeFilter');
+    const items = [
+      ...document.querySelectorAll('#packageGrid [data-type]'),
+      ...document.querySelectorAll('#alacarteTable [data-type]')
+    ];
+
+    function applyFilter() {
+      const v = (typeFilter.value || 'All').trim();
+      items.forEach(el => {
+        const types = (el.getAttribute('data-type') || '')
+          .split(/\s+/)
+          .map(s => s.trim())
+          .filter(Boolean);
+        const show = v === 'All' || types.includes(v);
+        el.style.display = show ? '' : 'none';
+      });
+    }
+
+    typeFilter.addEventListener('change', applyFilter);
+    applyFilter();
+  </script>
+</body>
+</html>
