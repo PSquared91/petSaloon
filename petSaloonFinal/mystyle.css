@@ -1,0 +1,206 @@
+
+:root {
+  --bg: #ffffff;
+  --fg: #111318;
+  --muted: #6b7280;
+
+  --panel: #f7f8fb;
+  --panel-border: #e5e7eb;
+
+  --link: #0d6efd;
+  --link-hover: #0b5ed7;
+
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-text: #111318;
+
+  --brand: #6f42c1;
+  --badge-bg: #edf2ff;
+  --badge-fg: #2b3779;
+
+  --invalid: #dc3545;
+}
+
+/* ---------- 2) DARK tokens (activated via .theme-dark) ---------- */
+.theme-dark {
+  --bg: #0b0c0f;
+  --fg: #f3f5f7;
+  --muted: #cbd5e1;
+
+  --panel: #111318;
+  --panel-border: #1f2430;
+
+  --link: #9ecbff;
+  --link-hover: #cde2ff;
+
+  --input-bg: #0b0d12;
+  --input-border: #2c3444;
+  --input-text: #ffffff;
+
+  --brand: #cbb6f5;
+  --badge-bg: #1e2638;
+  --badge-fg: #cfe0ff;
+
+  --invalid: #dc3545;
+}
+
+/* ---------- 3) System preference on first visit ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-dark):not(.theme-light-locked) {
+    color-scheme: dark;
+  }
+}
+
+/* ---------- 4) Smooth transitions (skip if reduced motion) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  html, body,
+  .navbar, .card, .accordion-item, .accordion-button,
+  .table, .list-group-item,
+  .form-control, .form-select, textarea,
+  footer {
+    transition: background-color .35s ease, color .35s ease, border-color .35s ease;
+  }
+}
+
+/* ---------- 5) Base & typography ---------- */
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, "Noto Sans", sans-serif;
+}
+a { color: var(--link); }
+a:hover { color: var(--link-hover); }
+.text-muted, .text-secondary { color: var(--muted) !important; }
+
+/* ---------- 6) Navbar / hero ---------- */
+.navbar:not([class*=" bg-"]):not(.bg-dark):not(.bg-light):not(.bg-primary):not(.bg-white):not(.bg-transparent) {
+  background-color: var(--panel);
+  border-bottom: 1px solid var(--panel-border);
+}
+.navbar.bg-dark {
+  background-color: #212529 !important; /* Bootstrap default */
+}
+.navbar-dark .navbar-brand,
+.navbar-dark .nav-link {
+  color: rgba(255,255,255,.92) !important;
+}
+.navbar-dark .nav-link.active,
+.navbar-dark .nav-link:focus,
+.navbar-dark .nav-link:hover {
+  color: #fff !important;
+}
+.navbar-light .navbar-brand,
+.navbar-light .nav-link {
+  color: var(--fg) !important;
+}
+/* Toggler visibility */
+.navbar-dark .navbar-toggler {
+  border-color: rgba(255,255,255,.25);
+}
+.navbar-dark .navbar-toggler-icon {
+  background-image: var(--bs-navbar-toggler-icon-bg, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"));
+}
+
+.sub-hero {
+  background: linear-gradient(135deg, #0d6efd, #4e9cff);
+  color: #fff;
+}
+
+/* ---------- 7) Cards ---------- */
+.card {
+  background: var(--panel);
+  color: var(--fg);
+  border: 1px solid var(--panel-border);
+  border-radius: 1rem;
+}
+.card-pet {
+  background: var(--panel);
+  color: var(--fg);
+  border: 1px solid var(--panel-border);
+  border-radius: 1rem;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.card-pet:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+/* ---------- 8) Badges ---------- */
+.badge-service {
+  display: inline-block;
+  background: var(--badge-bg);
+  color: var(--badge-fg);
+  border: 1px solid var(--panel-border);
+  padding: .35rem .6rem;
+  border-radius: .5rem;
+  font-size: .85rem;
+}
+
+/* ---------- 9) Tables ---------- */
+.table thead th {
+  background: var(--panel);
+  color: var(--fg);
+  border-bottom-color: var(--panel-border);
+}
+.table-hover tbody tr:hover { background-color: rgba(0,0,0,.04); }
+.theme-dark .table-hover tbody tr:hover { background-color: rgba(255,255,255,.05); }
+.table td, .table th { border-color: var(--panel-border); }
+
+/* ---------- 10) Accordion ---------- */
+.accordion-item { background: var(--panel); border-color: var(--panel-border); }
+.accordion-button {
+  background: var(--panel);
+  color: var(--fg);
+  border-color: var(--panel-border);
+}
+.accordion-button:not(.collapsed) { box-shadow: none; }
+
+/* ---------- 11) Forms ---------- */
+.form-label { color: var(--fg); font-weight: 600; }
+.form-control, .form-select, textarea {
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+}
+.form-control::placeholder,
+textarea::placeholder {
+  color: color-mix(in srgb, var(--input-text) 50%, transparent);
+  opacity: .6;
+}
+/* Visual invalid */
+.is-invalid, .error-border {
+  border-color: var(--invalid) !important;
+  box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--invalid) 25%, transparent);
+}
+
+/* ---------- 12) Lists & misc ---------- */
+.list-group-item {
+  background: var(--panel);
+  color: var(--fg);
+  border-color: var(--panel-border);
+}
+.color-dot {
+  width: 1.1rem; height: 1.1rem; border-radius: 999px;
+  display: inline-block; border: 1px solid var(--panel-border);
+}
+
+/* ---------- 13) Footer ---------- */
+footer {
+  background: var(--panel);
+  color: var(--muted);
+  border-top: 1px solid var(--panel-border);
+}
+
+/* ---------- 14) Buttons ---------- */
+.btn-outline-primary {
+  color: var(--fg);
+  border-color: var(--fg);
+}
+.btn-outline-primary:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* ---------- 15) Branding ---------- */
+.navbar-brand span { color: var(--brand); }
