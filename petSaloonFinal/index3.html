@@ -8,6 +8,18 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="style/mystyle.css"/>
   <link rel="icon" href="data:,"/>
+  <style>
+    /* Optional small polish; keep or move to mystyle.css */
+    .hero-section{background:linear-gradient(120deg,#343a40,#495057)}
+    .stat-tile{text-align:center}
+    .stat-label{font-size:.85rem;color:#6c757d}
+    .stat-value{font-weight:700;font-size:1.5rem}
+    .feature-icon{
+      width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;
+      border-radius:50%; background:#f1f3f5; margin-right:.5rem
+    }
+    .price-badge{font-weight:700}
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -21,10 +33,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index3.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="services2.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pay">Pay</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -37,6 +50,65 @@
       <p class="lead mb-0">Caring for your pets like family</p>
     </div>
   </header>
+
+  <!-- About Us -->
+  <section id="about" class="container my-5">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-12">
+        <h2 class="h3 mb-3">About Us</h2>
+        <p class="mb-4">
+          At <strong>Paw Patrol Pet Salon</strong>, our mission is simple: happy pets, happy people. 
+          We combine gentle handling, fear-free techniques, and transparent pricing so every visit feels safe, 
+          calm, and consistent—for you and your best friend.
+        </p>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex">
+            <div class="feature-icon">💖</div>
+            <div>
+              <h3 class="h5">Our Promise</h3>
+              <p class="mb-0">Kindness first. Every pet gets patient, one-on-one attention with breaks as needed and clear communication with pet parents.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex">
+            <div class="feature-icon">🧼</div>
+            <div>
+              <h3 class="h5">Clean & Safe</h3>
+              <p class="mb-0">Sanitized tools, fresh towels, and species-appropriate products. We use hypoallergenic options upon request.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex">
+            <div class="feature-icon">🕒</div>
+            <div>
+              <h3 class="h5">Hours & Location</h3>
+              <p class="mb-1">Mon–Sat: 9:00am–6:00pm · Sun: 10:00am–4:00pm</p>
+              <p class="mb-0">Walk-ins welcome; appointments recommended. <a href="contact.html">Get directions →</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional mini team intro -->
+      <div class="col-12">
+        <div class="alert alert-light border d-flex align-items-center" role="note">
+          <span class="me-2">👩🏽‍⚕️</span>
+          <div><strong>Meet our groomers:</strong> patient, certified, and pet-obsessed. Breed-specific cuts and special-care handling available.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Salon Info + Stats -->
   <main class="container my-5">
@@ -97,6 +169,163 @@
     </section>
   </main>
 
+  <!-- Pay -->
+  <section id="pay" class="container my-5">
+    <div class="row g-4">
+      <div class="col-12">
+        <h2 class="h3 mb-3">Pay</h2>
+        <p class="text-muted mb-4">Pay a deposit or settle an invoice securely. This demo shows the user flow—connect to Stripe/PayPal later.</p>
+      </div>
+
+      <!-- Prices quick view -->
+      <div class="col-12 col-lg-6">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h3 class="h5 mb-3">Popular Services & Prices</h3>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Bath & Brush (Small) <span class="badge bg-primary rounded-pill price-badge">$35</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Full Groom (Medium) <span class="badge bg-primary rounded-pill price-badge">$65</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Nail Trim <span class="badge bg-primary rounded-pill price-badge">$15</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Deshedding Add-On <span class="badge bg-primary rounded-pill price-badge">$20</span>
+              </li>
+            </ul>
+            <small class="d-block mt-2 text-muted">Final price may vary by coat condition and breed. See <a href="services.html">full menu</a>.</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment form (demo) -->
+      <div class="col-12 col-lg-6">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h3 class="h5 mb-3">Pay Online</h3>
+            <form id="payForm" novalidate>
+              <div class="row g-3">
+                <div class="col-12">
+                  <label for="payerName" class="form-label">Your Name</label>
+                  <input type="text" class="form-control" id="payerName" placeholder="Alex Johnson" required>
+                </div>
+                <div class="col-12">
+                  <label for="payerEmail" class="form-label">Email (for receipt)</label>
+                  <input type="email" class="form-control" id="payerEmail" placeholder="you@example.com" required>
+                </div>
+                <div class="col-12">
+                  <label for="serviceSelect" class="form-label">Service</label>
+                  <select id="serviceSelect" class="form-select" required>
+                    <option value="" selected disabled>Choose a service…</option>
+                    <option value="Deposit">Appointment Deposit</option>
+                    <option value="Bath & Brush">Bath & Brush</option>
+                    <option value="Full Groom">Full Groom</option>
+                    <option value="Nail Trim">Nail Trim</option>
+                    <option value="Custom Amount">Custom Amount</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="amount" class="form-label">Amount (USD)</label>
+                  <input type="number" min="1" step="0.01" class="form-control" id="amount" placeholder="50.00" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="tip" class="form-label">Tip (optional)</label>
+                  <select id="tip" class="form-select">
+                    <option value="0" selected>No Tip</option>
+                    <option value="0.10">10%</option>
+                    <option value="0.15">15%</option>
+                    <option value="0.20">20%</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Payment Method</label>
+                  <div class="d-flex gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="payMethod" id="pmCard" value="Card" checked>
+                      <label class="form-check-label" for="pmCard">Card</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="payMethod" id="pmCashApp" value="Cash App">
+                      <label class="form-check-label" for="pmCashApp">Cash App</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="payMethod" id="pmPayPal" value="PayPal">
+                      <label class="form-check-label" for="pmPayPal">PayPal</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 d-grid">
+                  <button type="submit" class="btn btn-primary">Continue to Pay</button>
+                </div>
+                <small class="text-muted">This is a demo flow. Replace the handler with your real processor later.</small>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQs (optional) -->
+      <div class="col-12">
+        <div class="accordion shadow-sm" id="payFaq">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="q1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1">Do you accept deposits?</button>
+            </h2>
+            <div id="a1" class="accordion-collapse collapse" data-bs-parent="#payFaq">
+              <div class="accordion-body">Yes—deposits help secure your appointment time. They apply to your final total.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="q2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">What if I need to cancel?</button>
+            </h2>
+            <div id="a2" class="accordion-collapse collapse" data-bs-parent="#payFaq">
+              <div class="accordion-body">Please cancel or reschedule at least 24 hours in advance to keep your deposit fully refundable.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Checkout Modal -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="checkoutTitle">Confirm Payment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-1"><strong>Name:</strong> <span id="confName"></span></p>
+          <p class="mb-1"><strong>Email:</strong> <span id="confEmail"></span></p>
+          <p class="mb-1"><strong>Service:</strong> <span id="confService"></span></p>
+          <p class="mb-1"><strong>Payment Method:</strong> <span id="confMethod"></span></p>
+          <p class="mb-0"><strong>Total:</strong> $<span id="confTotal"></span> USD</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Back</button>
+          <button class="btn btn-success" id="demoPayBtn">Pay (Demo)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+    <div id="successToast" class="toast align-items-center text-bg-success border-0" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          ✅ Payment recorded (demo). A receipt has been emailed.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3 mt-5">
     <p class="mb-0">© <span id="year"></span> Paw Patrol Pet Salon · Made with ❤️ for pets</p>
@@ -104,6 +333,47 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Small helpers for demo + existing year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const payForm = document.getElementById('payForm');
+    const checkoutModal = new bootstrap.Modal('#checkoutModal');
+    const toast = new bootstrap.Toast(document.getElementById('successToast'));
+
+    payForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('payerName').value.trim();
+      const email = document.getElementById('payerEmail').value.trim();
+      const service = document.getElementById('serviceSelect').value;
+      const amount = parseFloat(document.getElementById('amount').value || 0);
+      const tipRate = parseFloat(document.getElementById('tip').value || 0);
+      const method = document.querySelector('input[name="payMethod"]:checked')?.value || 'Card';
+
+      if(!name || !email || !service || !amount || amount <= 0){
+        alert('Please complete all required fields with a valid amount.');
+        return;
+      }
+      const total = (amount + amount * tipRate).toFixed(2);
+
+      document.getElementById('confName').textContent = name;
+      document.getElementById('confEmail').textContent = email;
+      document.getElementById('confService').textContent = service;
+      document.getElementById('confMethod').textContent = method;
+      document.getElementById('confTotal').textContent = total;
+
+      checkoutModal.show();
+    });
+
+    document.getElementById('demoPayBtn')?.addEventListener('click', () => {
+      checkoutModal.hide();
+      toast.show();
+
+      // TODO: Replace this with your real processor request.
+      // Example Stripe (server-side): POST to /create-checkout-session with { amount_cents, email, description }
+      // Then redirect to session.url
+    });
+  </script>
   <script src="scripts/indexfinal.js"></script>
 </body>
 </html>
